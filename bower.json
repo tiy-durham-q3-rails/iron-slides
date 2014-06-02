@@ -1,0 +1,8 @@
+{
+  "name": "iron-slides",
+  "version": "0.0.1",
+  "dependencies": {
+    "reveal.js": "~2.6.2"
+  },
+  "devDependencies": {}
+}

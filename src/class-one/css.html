@@ -1,0 +1,171 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>CSS</title>
+    <link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="../styles/main.min.css" id="theme">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '../bower_components/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="../images/favicon.ico">
+  </head>
+
+<div class="reveal">
+  
+    <aside class="logo">
+      <img src="../images/tiy-logo.png" width="150">
+    </aside>
+
+  
+    <div class="slides">
+      
+      <section data-background="#FD0755" class="title">
+        <h1>CSS</h1>
+      </section>
+      
+      <section>
+        <h2>Anatomy of a Website</h2>
+        <h3>Your Content</h3> 
+        <p>+ HTML: Structure</p>
+        <strong><p>+ CSS: Presentation</p></strong>
+        <p>= Your Website</p>
+
+        <aside class="notes">A website is a way to present your content to the world, using HTML and CSS to present that content &amp; make it look good.</aside>
+      </section>
+      
+      <section>
+        <h2>CSS: What is it?</h2>
+        <ul>
+          <li class="fragment">CSS = 
+            <strong>C</strong>ascading 
+            <strong>S</strong>tyle 
+            <strong>S</strong>heets
+          </li>
+          <li class="fragment">CSS is a "style sheet language" that lets you style the elements on your page.</li>
+          <li class="fragment">CSS is embedded inside HTML, but it is not HTML itself.</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2>CSS: What can it do?</h2>
+        <p style="font-style: Courier; font-weight: bold; text-decoration:underline">text</p>
+        <p style="color: yellow;  background-color: blue">color</p>
+        <p style="font-size: 85px">size</p>
+        <div>
+        <p style="text-align:right">position</p>
+      </section>
+      <section>
+        <h2>Anatomy of CSS</h2>
+        <p>CSS consists of "style rules". Each style rule consists of a "selector" and "declarations" of property-value pairs.</p>
+      </section>
+      
+      <section>
+        <pre>
+          <span style="background-color: yellow;">selector</span> {
+            property: values;
+          }
+        </pre>
+      </section>
+      
+      <section>
+        <pre>
+          <code>
+          body { 
+            color: white; 
+            background-color: blue;
+          }
+          </code>
+        </pre>
+      </section>
+      
+      <section>
+        <h2>CSS + HTML</h2>
+        <p>CSS can be embedded in HTML in several ways. One way is to include all CSS in a <code>style</code> tag, usually inside the <code>head</code> tag.</p>
+      </section>
+      
+      <section>
+        <h2>Selectors</h2>  
+        <p>The selector is used to select which elements in the HTML page will be given the styles inside the curly braces.</p>
+      </section>
+      
+      <section>
+        <h2>Different types of selectors:</h2>
+        <ol>
+          <li>Element</li>
+          <li>id</li>
+          <li>class</li>
+          <li>position in document</li>
+        </ol>
+      </section>
+      
+      <section>
+        <h2>Open Codepen</h2>  
+        <p>Open your Codepen Basic HTML file <a href="http://codepen.io">codenpen.io</a>,<br> or create a new one!</p>
+      </section>
+      
+      <section>
+       <h2>Exercise Time!</h2>
+       <p>Use your HTML practice page and add the following styles outlined in <a href="../images/class-one/exercise-two.png">this screenshot</a>.</p>
+       <small>HINT: Useful color names are pink and darkblue.</small>
+     </section>
+     
+     <section>
+       <h2>HOMEWORK</h2>
+       <ul>
+         <li>Create a new Codepen page in HTML/CSS with your name, pic of youself, bio, any social links you have (e.g. Twitter, LinkedIN) and links to five of your favorite websites. Also, add at least 10 different styling properties that we reviewed in class onto your page.</li>
+         <li>Make sure you've completed everything on the setup page.</li>
+         <li>Read this post: <a href="http://hoth.entp.com/output/git_for_designers.html">Git for Designers</a></li>
+         <li>Start practicing intro to terminal commands here: 
+           <a href="http://cli.learncodethehardway.org/book/">http://cli.learncodethehardway.org/book/</a>
+         </li>
+       </ul>
+     </section>
+      
+		</div>
+
+<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+    <script src="../bower_components/reveal.js/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        fragments: true,
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        backgroundTransition: 'slide', 
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+	</body>
+</html>
