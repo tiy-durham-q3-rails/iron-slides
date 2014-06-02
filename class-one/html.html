@@ -1,0 +1,150 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>HTML</title>
+    <link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="../styles/main.min.css" id="theme">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '../bower_components/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="../images/favicon.ico">
+  </head>
+
+<div class="reveal">
+  
+    <aside class="logo">
+      <img src="../images/tiy-logo.png" width="150">
+    </aside>
+  
+    <div class="slides">
+      <section data-background="#FD0755" class="title">
+        <h1>HTML</h1>
+      </section>
+      
+      <section>
+        <h2>Brief History of HTML</h2>
+        <ul>
+          <li>Invented by Tim Berners-Lee.</li>
+          <li>Created "hypertext" to share scientific papers.</li>
+          <li>First web page August 6, 1991.</li>
+          <li>Standardized by World Wide Web Consortium (w3c).</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2>Anatomy of a Website</h2>
+        <h3>Your Content</h3> 
+        <strong><p>+ HTML: Structure</p></strong>
+        <p>+ CSS: Presentation</p>
+        <p>= Your Website</p>
+
+        <aside class="notes">A website is a way to present your content to the world, using HTML and CSS to present that content &amp; make it look good.</aside>
+      </section>
+      
+      <section> 
+      <h2>HTML: What is it?</h2>
+       <ul>
+         <li class="fragment">HTML stands for 
+           <strong>H</strong>yper 
+           <strong>T</strong>ext 
+           <strong>M</strong>arkup 
+           <strong>L</strong>anguage
+         </li>
+         <li class="fragment">A text file that is "marked up" with tags.</li>
+         <li class="fragment">The markup tags tell the Web browser how to display the page.</li>
+         <li class="fragment">An HTML file can be created using a simple text editor or a WYSIWIG editor.</li>
+         <li class="fragment">Saved with <code>.html</code> extension.</li>
+         <li class="fragment">The native language of web browsers.</li>
+       </ul>
+     </section>
+     <section>
+       <h2>Semantic</h2>
+       <a href="http://codeguide.co/">http://codeguide.co/</a>
+     </section>
+     <section>
+       <h2>Accessible</h2>
+       <a href="http://www.w3.org/standards/webdesign/accessibility">http://www.w3.org/standards/webdesign/accessibility</a>
+     </section>
+     <section>
+       <h2>HTML tags</h2>
+       <p>Each tag has a "start tag", "end tag", some content in between, and optional attributes.</p>
+
+      <pre>
+        <code>
+    <tagname attribute="value">
+      content
+    </tagname>
+
+    <a href="http://www.theironyard.com" >
+      The Iron Yard
+    </a>
+        </code>
+      </pre>
+
+      <aside class="notes">Think of a tag as a "command" to the browser and of the attributes as modifiers of that command.</aside>
+     </section>
+     
+     <section>
+       <h2>Basic HTML file</h2>
+       <p>Open a new pen in <a href="http://codepen.io">codenpen.io</a></p>
+       <aside class="notes">The head contains "meta" information about the page, information that the browser needs before rendering.</aside>
+     </section>
+     
+     <section>
+       <h2>Exercise Time!</h2>
+       <h3>Create a webpage that looks like <a href="../images/class-one/exercise-one.png">this screenshot</a>.</h3>
+       <small>You can copy some of the text and hyperlink URLs from <a href="http://theironyard.com/locations/">theironyard.com/locations.</a></small>
+       <aside class="notes">
+         Bonus points for validating: http://validator.w3.org/#validate_by_input
+         Image file here: http://cl.ly/Vpih/download/tiy-logo.png
+       </aside>
+     </section>
+     
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+    <script src="../bower_components/reveal.js/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        fragments: true,
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        backgroundTransition: 'slide', 
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+	</body>
+</html>
