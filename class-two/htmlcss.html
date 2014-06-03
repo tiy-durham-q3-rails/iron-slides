@@ -1,0 +1,228 @@
+<!-- Big thanks to teaching-materials.org for example slides! -->
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>HTML + CSS, contd.</title>
+    <link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="../styles/main.min.css" id="theme">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '../bower_components/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="../images/favicon.ico">
+  </head>
+
+<div class="reveal">
+  
+    <aside class="logo">
+      <img src="../images/tiy-logo.png" width="150">
+    </aside>
+
+    <div class="slides">
+      
+      <section data-background="#FD0755" class="title">
+        <h1>HTML + CSS</h1>
+        <h3>(Continued)</h3>
+      </section>
+      
+      <section data-background="../images/class-two/grace-hopper.jpg" >
+        <blockquote cite="http://en.wikiquote.org/wiki/Grace_Hopper">
+          <p>"To me programming is more than an important practical art. It is also a gigantic undertaking in the foundations of knowledge."</p>
+          <strong>— Grace Hopper</strong>
+        </blockquote>
+      </section>
+      
+      <section>
+        <h2>Open your favorite text editor</h2> 
+        <ol>
+          <li>Create a new folder called "Gelato."</li>
+          <li>Open up your favorite text editor and create a new file.</li>
+          <li>Save that file with the name of your favorite ice cream flavor.</li>
+        </ol>
+        <br><br>
+        <small><em>NOTE: Make sure to save the an .html extension.</em></small>
+      </section>
+      
+      <section data-background="#FD0755" class="title">
+        <h1>HTML</h1>
+      </section>
+      
+      <section>
+        <h2>Tables</h2>
+        <p>Tables are useful for displaying tabular data on the web, like research study results.</p>
+      </section>
+      
+      <section>
+        <h2>Embeds</h2> 
+        <p>An integration point for an external application or interactive content (in other words, a plug-in)</p> 
+      </section>
+      
+      <section>
+        <h2>Different embed types</h2>
+        <ul>
+          <li class="fragment">IFrame</li>
+          <li class="fragment">Multimedia</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2>Forms</h2>
+        <p>Helps create a custom experience on the web and enable more people to generate content.</p>
+      </section>
+      
+      <section>
+        <img src="../images/class-two/50296270.jpg" width="600">
+      </section>
+      
+      <section>
+        <h2>GET vs. POST</h2>
+        <p>Use GET for safe actions and POST for unsafe actions.</p>
+        <a href="http://blog.teamtreehouse.com/the-definitive-guide-to-get-vs-post">Read more about GET vs. Post <here class=""></here></a>
+      </section>
+      
+      <section data-background="#FD0755" class="title">
+        <h1>CSS</h1>
+      </section>
+      
+      <section>
+        <h2>block &amp; inline Elements</h2>
+        <p>There are two types of elements in the CSS world: "inline" and "block".</p>
+      </section>
+      
+      <section>
+        <h2>inline</h2>
+        <code>INPUT, A, IMG, BR,</code>...etc.
+      </section>
+      
+      <section>
+        <h2>block</h2>
+        <p>A browser generally renders a new line after any "block" elements in the HTML.</p>
+        <code>P, H1, UL, LI, TABLE,</code>...etc.
+      </section>
+      
+      <section>
+        <h2>Grouping elements</h2>
+        <p>A grouping element lets you style multiple elements as a whole.</p>
+      </section>
+      
+      <section>
+        <h2>width &amp; height</h2>
+        <p>The width and height properties can be used to resize block level elements and IMG elements.</p>
+      </section>
+      
+      <section>
+        <h2>overflow</h2>
+        <p>The overflow property specifies what happens when content overflows the specified dimensions. The default is "visible", which means it flows outside.</p>
+      </section>
+      
+      <section>
+        <h2>Box Model</h2>
+        <p>All elements are treated as boxes by the browser's rendering engine (either "inline" or "block" boxes).</p>
+        <p>A box consists of content, padding, border, and margin.</p>
+      </section>
+      
+      <section>
+        <img src="../images/class-two/box-model.gif" alt="Box model">
+      </section>
+      
+      <section>
+        <h2>Margin</h2>
+        <p>The margin is a transparent area around the box - the background of the box does not apply to it. It separates the box from other elements.</p>
+        <img src="../images/class-two/box-model.gif" alt="Box model">
+      </section>
+      
+      <section>
+        <h2>Border</h2>
+        <p>The <code>border</code> property styles the edge around the box and is specified as "thickness style color".</p>
+        <img src="../images/class-two/box-model.gif" alt="Box model">
+      </section>
+      
+      <section>
+        <h2>Padding</h2>
+        <p>The <code>padding</code> property specifies whitespace between the border and the content.</p>
+        <img src="../images/class-two/box-model.gif" alt="Box model">
+      </section>
+      
+      <section>
+        <h2>CSS Positioning</h2>
+        <p>The position property is used to specify a positioning scheme for an element. The default is "static" which puts the element in the "normal" flow.</p>
+      </section>
+      
+      <section>
+        <h2>position: normal</h2>
+        <p>In normal flow, block boxes flow from top to bottom, making a new line after every box.</p>
+      </section>
+      
+      <section>
+        <h2>position: relative</h2>
+        <p>The "relative" value will still put the element in the normal flow, but then offset it according to top/left/right/bottom properties.</p>
+      </section>
+      
+      <section>
+        <h2>position: absolute</h2>
+        <p>The "absolute" value will take the element out of the normal flow and position it in relation to the window (or the closest non-static element).</p>
+      </section>
+      
+      <section>
+        <h2>z-index</h2>
+        <p>The z-index property specifies the stack order of positioned elements, in the case that they are overlapping. The element with highest z-index goes on top.</p>
+      </section>
+      
+      <section>
+        <h2>CSS Floats</h2>
+        <p>The <code>float</code> property is used to float boxes on the sides of other boxes, allowing other content to flow around it. First used to wrap text around images.</p>
+        <a href="http://www.maxdesign.com.au/articles/css-layouts/">Example float layouts</a>
+      </section>
+      
+      <section>
+        <h2>Clear</h2>
+        <p>The clear property can be used to specify that an element should <strong>NOT</strong> wrap around floated elements above it.</p>
+      </section>
+      
+		</div>
+
+    <script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+    <script src="../bower_components/reveal.js/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        fragments: true,
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        backgroundTransition: 'slide', 
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+	</body>
+</html>

@@ -1,0 +1,181 @@
+<!-- Big thanks to teaching-materials.org for example slides! -->
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>git/Github</title>
+    <link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="../styles/main.min.css" id="theme">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '../bower_components/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="../images/favicon.ico">
+  </head>
+
+<div class="reveal">
+  
+    <aside class="logo">
+      <img src="../images/tiy-logo.png" width="150">
+    </aside>
+
+    <div class="slides">
+      
+      <section data-background="#FD0755" class="title">
+        <h1>git</h1>
+        <h3>Version Control</h3>
+      </section>
+      
+      <section>
+        <h2>What is version control?</h2>
+        <p>Version control keeps track of changes we make to a file.</p>
+      </section>
+      
+      <section>
+        <h2>Reasons to use version control:</h2>
+        <ul>
+          <li class="fragment">Keeping a files history.</li>
+          <li class="fragment">Collaborating on a team.</li>
+        </ul>
+      </section>
+      
+      <section class="logos">
+        <h2>Companies that use git:</h2>
+        <img src="http://i.imgur.com/SMUjHw0.jpg" alt="Google" class="fragment">
+        <img src="http://i.imgur.com/taOJikK.png" alt="Facebook" class="fragment">
+        <img src="http://i.imgur.com/AH1Rbds.jpg" alt="Microsoft" class="fragment">
+        <img src="http://i.imgur.com/cjTx9h6.png" alt="Mozilla" class="fragment">
+        <img src="http://i.imgur.com/FCBcZYx.png" alt="Twitter" class="fragment">
+        <img src="http://i.imgur.com/REYwrwV.jpg" alt="LinkedIN" class="fragment">
+        <img src="http://i.imgur.com/DqxBBVq.png" alt="Netflix" class="fragment">
+      </section>
+      
+      <section>
+        <strong>Julia creates this code and commits it as version 0:</strong>
+        <pre>
+          div.title {
+            color: yellow;
+            padding: 20px;
+            text-transform: uppercase;
+          }
+        </pre>
+        <strong>Julia creates this code and commits it as version 1:</strong>
+        <pre>
+          span.title {
+            color: pink;
+            padding: 5px;
+          }
+        </pre>
+      </section>
+      
+      <section>
+        <strong>Clinton pulls the code from version 0 and edits:</strong>
+        <pre>
+          div.title {
+            color: yellow;
+            padding: 20px;
+            margin: 5px 10px;
+            background-color: black;
+            text-transform: uppercase;
+          }
+        </pre>
+        <strong>Clinton pulls in Julia's changes (version 1) and it merges them:</strong>
+        <pre>
+          span.title {
+            color: pink;
+            padding: 5px;
+            margin: 5px 10px;
+            background-color: black;
+          }
+        </pre>
+      </section>
+      
+      <section>
+        <h2>Centralized vs. Distributed</h2>
+      </section>
+      
+      <section>
+        <h2>Centralized</h2>
+        <img src="http://i.imgur.com/GCilRdz.png" alt=""><br>
+        <small>From <a href="http://betterexplained.com/articles/intro-to-distributed-version-control-illustrated/">Better Explained article</a></small>
+      </section>
+      
+      <section>
+        <h2>Distributed</h2>
+        <img src="http://i.imgur.com/2OqHqnV.png" alt=""><br>
+        <small>From <a href="http://betterexplained.com/articles/intro-to-distributed-version-control-illustrated/">Better Explained article</a></small>
+      </section>
+      
+      <section>
+        <h2>EXERCISE TIME!</h2>
+        <ol>
+          <li>Open up Terminal.app (Applications > Utilities > Terminal)</li>
+          <li><code>cd</code> into your "Gelato" folder</li>
+        </ol>
+        <br><br>
+        <small><em>REMINDER: Don't forget to review your terminal commands here: <a href="http://cli.learncodethehardway.org/book/">http://cli.learncodethehardway.org/book/</a>.</em></small>
+      </section>
+      
+      <section>
+        <img src="http://i.imgur.com/nF7nTR7.jpg" alt="Github" width="800">
+      </section>
+      
+      <section>
+        <h2>What is Github?</h2>
+        <p>Website that hosts shared repositories, viewable code reviews, issue tracking and project wikis.</p>
+      </section>
+      
+      <section>
+        <h2>HOMEWORK</h2>
+        <ul>
+          <li>Re-create the Surf &amp; Paddle website + push to Github: <a href="http://cl.ly/Vqtm/download/surf-and-paddle.pdf">Download PDF here</a>.</li>
+          <li>Run through <a href="http://learnlayout.com/">http://learnlayout.com/</a>.
+        </ul>
+      </section>
+      
+		</div>
+
+    <script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+    <script src="../bower_components/reveal.js/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        fragments: true,
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        backgroundTransition: 'slide', 
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+	</body>
+</html>
