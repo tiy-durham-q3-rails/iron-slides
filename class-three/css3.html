@@ -1,0 +1,158 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>CSS3</title>
+    <link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="../styles/main.min.css" id="theme">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = '../bower_components/reveal.js/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+    <link rel="shortcut icon" href="../images/favicon.ico">
+  </head>
+
+<div class="reveal">
+  
+    <aside class="logo">
+      <img src="../images/tiy-logo.png" width="150">
+    </aside>
+  
+    <div class="slides">
+      
+      <section data-background="#FD0755" class="title">
+        <h1>CSS3</h1>
+      </section>
+      
+      <section>
+        <h2>What is CSS3?</h2>
+      </section>
+      
+      <section>
+        <img src="http://i.imgur.com/cpmzF65.png" width="200">
+        <h3>CSS3 latest evolution of the Cascading Style Sheets language.</h3>
+        <ul>
+          <li class="fragment">Aims at extending CSS2.</li>
+          <li class="fragment">Experimental parts are vendor prefixed (e.g. -moz, -webkit).</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2><code>border-radius</code></h2>
+        <p>CSS property that allows us to define how rounded border corners are.</p>
+      </section>
+      
+      <section>
+        <h2><code>box-shadow</code></h2>
+        <p>Allows casting a drop shadow from the frame of almost any element.</p>
+      </section>
+      
+      <section>
+        <p>
+          <code>box-shadow: inset offset-x offset-y blur-radius spread-radius color;</code>
+        </p>
+        <br>  
+        <p>
+          <code>
+              box-shadow: inset 3px 3px 1em #0066CC, -1em 0 0.4em #CCCCCC;
+           </code>
+        </p>
+      </section>
+      
+      <section>
+        <h2><code>gradient</code></h2>
+        <p>A CSS data type that denotes a CSS <code>&lt;image&gt;</code> made of a progressive transition between two or more colors</p>
+      </section>
+      
+      <section>
+        <h2><code>linear-gradient</code></h2>
+        <p>The CSS linear-gradient() function creates an <image> which represents a linear gradient of color</p>
+      </section>
+      <!-- Gradient example from Mozilla Developer Network. -->
+      <section> 
+        <div style="margin-bottom: 20px;background: -moz-linear-gradient(left,red,orange,yellow, green, blue,indigo,violet); background: -webkit-linear-gradient(left,red,orange,yellow, green, blue,indigo,violet); background: -ms-linear-gradient(left,red,orange,yellow, green, blue,indigo,violet); background: -o-linear-gradient(left,red,orange,yellow, green, blue,indigo,violet); background: linear-gradient(to right,red,orange,yellow, green, blue,indigo,violet); padding: 20px 0;">
+   A rainbow made from a gradient</div> 
+        <p>
+          <code>
+              background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+           </code>
+        </p>
+      </section>
+      
+      <section>
+        <h2><code>radial-gradient</code></h2>
+        <p>The CSS radial-gradient() function creates an <image> which represents a gradient of colors radiating from an origin, the center of the gradient.</p>
+      </section>
+      
+      <section>
+        <div style="background-image: radial-gradient(circle at bottom left, yellow, #f06d06); margin-bottom: 20px; padding: 20px 0;">Bottom/left gradient</div>
+        <p>
+          <code>background-image: radial-gradient(circle at bottom left, yellow, #f06d06);</code>
+        </p>
+      </section>
+      
+      <section>
+       <h2>Exercise Time!</h2>
+       <p>Take the file you were working on and do the following:</p>
+       <ol>
+         <li>Add a linear gradient background to the <code>header</code>.</li>
+         <li>Place a <code>box-shadow</code> around the aside.</li>
+         <li>Add a <code>border-radius</code> and <code>background-color</code> around the main content area (e.g. articles).</li>
+       </ol>
+     </section>
+     
+     <section>
+       <h2>HOMEWORK!</h2>
+       <ul>
+         <li>Continue Surf and Paddle re-creation + add-in HTML5 elements.</li>
+         <li>Read through <a href="http://diveintohtml5.info/semantics.html">Semantic HTML5</a>.</li>
+         <li><em>EXTRA CREDIT: Go back to the Day One homework and add-in 5 HTML5 properties and 5 CSS3 specific styles.</em></li>
+       </ul>
+     </section>
+      
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+        fragments: true,
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        backgroundTransition: 'slide', 
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
