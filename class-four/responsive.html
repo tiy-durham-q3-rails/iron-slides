@@ -1,0 +1,237 @@
+<!-- Thanks to @amwelles for inspiration from her awesome responsive design slides! -->
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Responsive design</title>
+    <link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="../styles/main.min.css" id="theme">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = '../bower_components/reveal.js/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+    <link rel="shortcut icon" href="../images/favicon.ico">
+  </head>
+
+<div class="reveal">
+  
+    <aside class="logo">
+      <img src="../images/tiy-logo.png" width="150">
+    </aside>
+  
+    <div class="slides">
+      
+      <section data-background="#FD0755" class="title">
+        <h1>Responsive Design</h1>
+      </section>
+      
+      <section>
+        <h2>What is Responsive Design?</h2>
+        <p class="fragment">The theory and practice of crafting websites that allow the user to enjoy its features no matter what device they are using.</p>
+      </section>
+      
+    	<section>
+				<h2>Responsive terms</h2>
+				<ul>
+					<li class="fragment">media queries</li>
+					<li class="fragment">flexible images</li>
+					<li class="fragment">fluid grids</li>
+          <li class="fragment">breakpoints</li>
+				</ul>
+			</section>
+      
+      <section>
+        <h2>Media queries</h2>
+        <h3><code>@media</code></h3>
+        <p class="fragment">Determines the screen size we want to target our styles to.</p>
+      </section>
+      
+      <section>
+					<h2>Media queries</h2>
+          <p>Start with our default styles.</p>
+					<pre><code data-trim contenteditable>aside {
+  width: 100%;
+  text-align: center;
+}</code></pre>
+        <div class="fragment">
+          <p>Create the styles we want to appear within a particular screen size.</p>
+					<pre><code data-trim contenteditable>@media screen and (max-width: 320px) {
+  aside {
+    width: 30%;
+    text-align: left;
+    float: right;
+  }
+}</code></pre>
+					</div>
+			</section>
+      
+      <section>
+  			<h2>Breakpoints</h2>
+  			<p>Everytime the design starts to break, it's time for a new media query.</p>
+  		</section>
+      
+    	<section>
+				<h2>CSS for certain situations</h2>
+				<p>Rather than looking for a type of device they look at the capability of the device, and you can use them to check for all kinds of things.</p>
+				<ul>
+					<li class="fragment">width and height of the viewport</li>
+					<li class="fragment">device width and height</li>
+					<li class="fragment">orientation (landscape or portrait)</li>
+					<li class="fragment">resolution</li>
+				</ul>
+			</section>
+      
+      <section>
+				<h2>Examples of responsive websites</h2>
+				<ul>
+					<li><a href="http://smashingmagazine.com/">Smashing Magazine</a></li>
+					<li><a href="http://www.bostonglobe.com/">The Boston Globe</a></li>
+					<li><a href="http://www.starbucks.com/">Starbucks</a></li>
+					<li><a href="http://alistapart.com/">A List Apart</a></li>
+				</ul>
+				<aside class="notes">
+					<p>Ask students if they have any more examples.</p>
+				</aside>
+			</section>
+      
+      <section>
+  			<h2>How do I test on various devices without the device?</h2>
+  			<p class="fragment">Just resize the browser for the most important media queries. Chrome has an emulator built in! Open up the Developer Tools, show the drawer, and select the "Emulation" tab.</p>
+  		</section>
+      
+      <section>
+					<h2>Responsive design is disruptive</h2>
+					<p>Before you can embrace Responsive, you have to update your processes. It also means educating clients and (for some) resetting their expectation that websites should look the same in every browser, on every device.</p>
+			</section>
+      
+      <section>
+				<section>
+					<h2>In support of responsive</h2>
+					<p>With disruption comes new tools and new ways of thinking.</p>
+				</section>
+				<section>
+					<h2>Wireframing</h2>
+					<p>Lots of wireframing software such as <a href="http://support.balsamiq.com/customer/portal/articles/615901-responsive-design-with-mockups">Balsamiq</a> now offer a plethora of responsive-capable tools.</p>
+				</section>
+				<section>
+					<h2>Designing</h2>
+					<p>New ways of presenting designs are also popping up,<br>
+						such as <a href="http://styletil.es/">style tiles</a>. The style tile to the left was<br>
+						turned into the website on the right.</p>
+				</section>
+			</section>
+      
+      <section>
+				<h2>Multiple screen sizes</h2>
+				<p>This is the idea that there shouldn't be a mobile web and a tablet web and desktop web. We should assume that people will try to view a website on whatever device they have with them.</p>
+				<p>Our users love their devices, and it's not their fault they've been given <strong>1 billion</strong> to choose from!</p>
+			</section>
+      
+      <section>
+				<section>
+					<h2>Media query support</h2>
+					<p>The current versions of all major browsers support media queries. There will always be someone who is, for whatever reason, using an older browser.</p>
+					<h3>No support</h3>
+					<ul>
+						<li>Internet Explorer 8 and below</li>
+						<li>Safari 3.2 and below</li>
+					</ul>
+					<p><a href="http://caniuse.com/css-mediaqueries">More information on browser support</a></p>
+					<aside class="notes">
+						<p>At least most of us aren't coding for IE6 anymore!</p>
+					</aside>
+				</section>
+				<section>
+					<h2>Still need support for older browsers?</h2>
+					<p>There's a Javascript library for that!</p>
+					<ul>
+						<li><a href="http://modernizr.com/">Modernizer</a></li>
+						<li><a href="https://github.com/scottjehl/Respond">Respond.js</a></li>
+					</ul>
+					<aside class="notes">
+						<p>Use these only if you absolutely need to support older browsers. They're performance hogs.</p>
+					</aside>
+				</section>
+			</section>
+      <section>
+        <h2>Mobile first?</h2>
+        <div class="fragment">
+          <em>What it means is, instead of offering "lighter" content or a seemingly restrictive experience to those viewing your site on a mobile device, stop. Regroup. Plan your site out thoughtfully enough that your content is already concise and simplified to begin with. Thinking "Mobile First" helps you accomplish this while you transition to Responsive Design. <strong>- Luke Wroblewski</strong></em>
+        </div>
+      </section>
+
+      <section>
+        <h2>Just a fad?</h2>
+        <div class="fragment">
+          <p>Responsive is not a fad, as it addresses a real<br>
+            need for planning our sites thoughtfully.</p>
+        </div>
+        <aside class="notes">
+          <p>Elements of responsive design may be fads. Hamburger icon, menu slide down, etc.</p>
+        </aside>
+      </section>
+
+      <section>
+        <h2>A replacement for mobile apps?</h2>
+        <div class="fragment">
+          <p>Responsive is not a replacement for mobile apps. Responsive can save companies time and money by allowing for the development and maintenance of one set of code, but only if it's the appropriate solution.</p>
+        </div>
+        <aside class="notes">
+          <p>When might you want an app rather than a website?</p>
+        </aside>
+      </section>
+       <section>
+         <h2>WEEKEND HOMEWORK</h2>
+         <ul>
+           <li>Continue work on desktop version of Surf + Paddle.</li>
+           <li>Create a 320px breakpoint for the Surf + Paddle website, PDF provided.</li>
+           <li>Read through <a href="http://alistapart.com/article/responsive-web-design/">Responsive Web Design</a>.</li>
+         </ul>
+      </section>
+      
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+        fragments: true,
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        backgroundTransition: 'slide', 
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
