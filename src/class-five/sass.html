@@ -1,0 +1,205 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Sass (Syntactically Awesome StyleSheets)</title>
+    <link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="../styles/main.min.css" id="theme">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = '../bower_components/reveal.js/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+    <link rel="shortcut icon" href="../images/favicon.ico">
+  </head>
+
+<div class="reveal">
+  
+    <aside class="logo">
+      <img src="../images/tiy-logo.png" width="150">
+    </aside>
+  
+    <div class="slides">
+    	<section data-background="#FD0755" class="title">
+        <h1>Sass</h1>
+      </section>
+      
+      <section>
+      	<h2>What are CSS preprocessors?</h2>
+      	<p class="fragment">CSS preprocessors take code written in the preprocessed language (LESS, Sass, Stylus) and then convert that code into CSS.</p>
+      </section>
+      
+      <section>
+      	<h2>
+      		<a href="http://lesscss.org/">LESS</a>
+      	</h2>
+      	<p>Most popularly know by being used by Twitter Bootstrap front end web framework.</p>
+      </section>
+      
+      <section>
+      	<h2>
+      		<a href="http://learnboost.github.io/stylus/">
+      			Stylus
+      		</a>
+      	</h2>
+      	<p></p>
+      </section>
+      
+      <section>
+      	<h2>Sass</h2>
+      	<h3 class="fragment">
+      		<strong>S</strong>yntactically 
+      		<strong>A</strong>wesome 
+      		<strong>S</strong>tyle<strong>S</strong>heets
+      	</h3>
+      	<p class="fragment">Sass is an extension of CSS that adds power and elegance to the basic language.</p>
+      </section>
+      
+      <section>
+      	<h2>Variables</h2>
+      	<p>Variables begin with dollar signs, and are set like CSS properties and you can then refer to them in properties.</p>
+      </section>
+      
+      <section>
+      	<h2>Nested Rules</h2>
+      	<p>Sass allows CSS rules to be nested within one another. The inner rule then only applies within the outer rule’s selector.</p>
+      </section>
+      
+      <section>
+      	<h2>Operations</h2>
+      	<p>Sass has a handful of standard math operators like +, -, *, /, and % to use in our CSS.</p>
+      </section>
+      
+      <section>
+      	<h2>Mixins</h2>
+      	<p>Mixins allow you to define styles that can be re-used throughout the stylesheet without needing to resort to non-semantic classes.</p>
+      </section>
+      
+      <section>
+      	<h2><code>@extend directive</code></h2>
+      	<p>Using @extend lets you share a set of CSS properties from one selector to another and helps keep your Sass very DRY.</p>
+      </section>
+      
+      <section>
+      	<h2>.sass VS .scss</h2>
+      </section>
+      
+      <section>
+      	<h2>.sass</h2>
+      	<pre>
+	      	<code>
+// Variable
+!primary-color= hotpink
+ 
+// Mixin
+=border-radius(!radius)
+    -webkit-border-radius= !radius
+    -moz-border-radius= !radius
+    border-radius= !radius
+ 
+.my-element
+    color= !primary-color
+    width= 100%
+    overflow= hidden
+ 
+.my-other-element
+    +border-radius(5px)
+	      	</code>
+      	</pre>
+      </section>
+      
+      <section>
+      	<h2>.scss</h2>
+      	<pre>
+	      	<code>
+// Variable
+$primary-color: hotpink;
+ 
+// Mixin
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+ 
+.my-element {
+    color: $primary-color;
+    width: 100%;
+    overflow: hidden;
+}
+ 
+.my-other-element {
+    @include border-radius(5px);
+}
+	      	</code>
+      	</pre>
+      </section>
+      
+      <section>
+      	<h2>Compiling Sass</h2>
+      	<ol>
+	      	<li>First install Sass, 	
+	      		<a href="http://tiy-durham-june2014-frontend.github.io/class-website/setup.html#sass">directions on class website.</a>
+	      	</li>
+	      	<li>Open Terminal.app</li>
+	      	<li><code>cd</code> to your Surf + Paddle folder.</li>
+	      	<li>Type <code>mv styles.css styles.scss</code></li>
+	      	<li>Type: sass --watch styles.scss:styles.css</li>
+	      	<li>Start getting Sassy!</li>
+      	</ol>
+      </section>
+    
+	    <section>
+	     <h2>HOMEWORK</h2>
+	     <ul>
+	       <li>Continue work on desktop version of Surf + Paddle.</li>
+	       <li>Refactor Surf and Paddle using Sass.</li>
+	       <li>Read through this style guide: <a href="http://css-tricks.com/sass-style-guide/">http://css-tricks.com/sass-style-guide/</a></li>
+	     </ul>
+	    </section>
+      
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+        fragments: true,
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        backgroundTransition: 'slide', 
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
