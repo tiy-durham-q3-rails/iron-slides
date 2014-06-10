@@ -1,0 +1,148 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>gulp.js</title>
+    <link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="../styles/main.min.css" id="theme">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = '../bower_components/reveal.js/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+    <link rel="shortcut icon" href="../images/favicon.ico">
+
+  </head>
+  
+  <body>
+    <div class="reveal">
+  
+      <aside class="logo">
+        <img src="../images/tiy-logo.png" width="150">
+      </aside>
+    
+      <div class="slides">
+      	<section data-background="#FD0755" class="title">
+          <h1>gulp.js</h1>
+        </section>
+        
+        <section>
+          <h2>Let's start with <a href="http://nodejs.org/">node.js</a></h2>
+          <p class="fragment">
+            Node.js is a software platform for scalable server-side and networking applications. Node.js applications are written in JavaScript, and can be run within the Node.js runtime on Mac OS X, Windows and Linux with no changes
+          </p>
+        </section>
+        
+        <section>
+          <h2>What is <a href="https://www.npmjs.org/">npm</a>?</h2>
+          <p class="fragment">Node Package Manager (npm) installs, publishes and manages node programs through command line.</p>
+          <pre class="fragment">
+            <code>
+          npm install name-of-package
+            </code>
+          </pre>
+        </section>
+        
+        <section>
+          <h2>What is <a href="http://gulpjs.com/">gulp.js?</a></h2>
+          <p>A stream builder written in Javascript.</p>
+        </section>
+        
+        <section>
+          <h2>What do you mean by streams?</h2>
+          <p class="fragment">A stream represents an object that can either be the source of data or it can be the target of data.</p>
+        </section>
+        
+        <section data-background="../images/class-six/stream.jpg">
+          <blockquote cite="http://cm.bell-labs.com/who/dmr/mdmpipe.html">
+            <p>"We should have some ways of connecting programs like garden hose--screw in
+  another segment when it becomes necessary to massage data in
+  another way. This is the way of I/O also."</p>
+          </blockquote>
+        </section>
+        
+        <section>
+          <h2>Want to learn more about streams?</h2>
+          <a href="https://github.com/substack/stream-handbook">Check out the streams handbook!</a>
+        </section>
+        
+        <section>
+          <h2>gulp.js VS Grunt.js</h2>
+          <ul>
+            <li class="fragment">gulp utilizes nodes built-in streams module to implement task, while Grunt does not.</li>
+            <li class="fragment">Grunt causes you to write more code. (Input + output values need to be defined.)</li>
+            <li class="fragment">gulp.js is newer, but building momentum.</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>Let's get gulping!</h2>
+          <ol>
+            <li>Open your Surf + Paddle folder in atom/Sublime.</li>
+            <li>Create two new files: 
+              <ul>
+                <li><code>gulpfile.js</code></li>
+                <li><code>package.json</code></li>
+              </ul>
+            <li>Go to this url to get code: <a href="https://gist.github.com/juliaelman/e752a5d72d73d9991436">click here.</a></li>
+          </ol>
+        </section>
+        
+        <section>
+          <h2>HOMEWORK</h2>
+          <ul>
+            <li>Continue work on desktop version of Surf + Paddle.</li>
+            <li>Add Bourbon + refactor SCSS with this library of mixins.</li>
+            <li>
+              Add <code>gulpfile.js</code> + <code>package.json</code> to your project to Github.
+            </li>
+            <li>Re-structure your folder structure like-a-so: 
+              <a href="https://gist.github.com/juliaelman/e752a5d72d73d9991436#file-gistfile1-txt">example here.</a>
+            </li>
+          </ul>
+        </section>
+        
+		  </div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+        fragments: true,
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        backgroundTransition: 'slide', 
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+	</body>
+</html>

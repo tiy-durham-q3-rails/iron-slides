@@ -1,0 +1,160 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Bourbon</title>
+    <link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="../styles/main.min.css" id="theme">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = '../bower_components/reveal.js/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+    <link rel="shortcut icon" href="../images/favicon.ico">
+  </head>
+<body>
+  <div class="reveal">
+  
+    <aside class="logo">
+      <img src="../images/tiy-logo.png" width="150">
+    </aside>
+  
+    <div class="slides">
+    	<section data-background="#FD0755" class="title">
+        <h1>Bourbon</h1>
+      </section>
+      
+      <section>
+        <h2>What is <a href="http://bourbon.io/">Bourbon</a>?</h2>
+        <p class="fragment">
+          A simple and lightweight mixin library for Sass.
+        </p>
+      </section>
+      
+      <section>
+        <pre>
+          <code>
+// Bourbon mixin with Sass
+section {
+  @include linear-gradient(to top, red, orange);
+}
+
+/* Compiled CSS  */
+section {
+  background-color: red;
+  background-image: -webkit-linear-gradient
+                              (bottom, red, orange);
+  background-image: 
+                    linear-gradient(to top, red, orange);
+}
+          </code>
+        </pre>
+      </section>
+      
+      <section>
+        <pre>
+          <code>
+// Bourbon mixin with Sass
+h1 {
+  font-family: $helvetica;
+  font-size: golden-ratio(14px,  1);
+}
+
+
+/* Compiled CSS  */
+h1 {
+  font-family: "Helvetica Neue", 
+                        Helvetica, Arial, sans-serif;
+  font-size: 23px;
+}
+          </code>
+        </pre>
+      </section>
+      
+      <section>
+        <h2>Bourbon VS Compass</h2>
+        <ul>
+          <li class="fragment">Compass requires you to include a <code>config.rb</code> file to configure your Sass input/output.</li>
+          <li class="fragment">Bourbons is simply a set of mixins for us to leverage.</li>
+          <li class="fragment">Compass uses Ruby extensions while Bourbon relies exclusively on Sass.</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2>Installing Bourbon</h2>
+        <ol>
+          <li>Open Terminal.app</li>
+          <li>Type: <code>gem install bourbon</code></li>
+          <li><code>cd</code> into your Surf + Paddle styles directory.</li>
+          <li>Type: <code>bourbon install</code></li>
+        </ol>
+      </section>
+      
+      <section>
+        <h2>Adding Bourbon to your SCSS file</h2>
+        <ol>
+          <li>Open your <code>.scss</code> file.</li>
+          <li>Add <code>@import 'bourbon/bourbon';</code> to the beginning of your file.</li>
+          <li>Enjoy the Bourbon goodness!</li>
+        </ol>
+      </section>
+      
+      <section>
+        <h2>Bourbon documentation</h2>
+        <p>There are lots of tips and tricks to use when using Bourbon. Check out their documentation located here: <a href="http://bourbon.io/docs/">http://bourbon.io/docs/</a></p>
+      </section>
+      
+      <section>
+        <h2>Exercise time!</h2>
+        <p>Let's add some Bourbon mixins to your Sass styles.</p>
+        <ul>
+          <li>Open Surf + Paddle .scss file.</li>
+          <li>Start adding in mixins!</li>
+        </ul>
+      </section>
+      
+		</div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+        fragments: true,
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        backgroundTransition: 'slide', 
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
