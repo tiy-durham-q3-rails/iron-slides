@@ -35,6 +35,11 @@ body { background: #FFFFFF; }
   width: 100%;
 }
 
+.lead {
+  font-size: 1.5em;
+  margin: 0;
+}
+
 /*********************************************
  * HEADERS
  *********************************************/
@@ -178,3 +183,49 @@ body { background: #FFFFFF; }
   padding: 20px 10px;
   max-height: 100px;
 }
+
+/*********************************************
+ * HOMEPAGE
+*********************************************/
+ 
+body#home { 
+  box-sizing: border-box; 
+  font-family: "PT Sans", sans-serif;
+  background: #FFFFFF;
+}
+
+body#home a:not(.image) {
+  color: #0066cc;
+  text-decoration: none;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  -ms-transition: color .15s ease;
+  -o-transition: color .15s ease;
+  transition: color .15s ease; }
+
+body#home a:not(.image):hover {
+  color: #51a0f0;
+  text-shadow: none;
+  border: none; }
+ 
+body#home header {
+  font-family: "PT Sans", sans-serif;
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  padding: 25px 0 25px 25px;
+  background: rgb(253, 7, 85);
+}
+
+body#home header hgroup h1 {
+  font-size: 3.77em;
+  margin: 0;
+}
+
+body#home #main {
+  background: #FFFFFF;
+  padding: 25px 0 25px 25px;
+}
+
+body#home #main ol    { margin: 0; }
+body#home #main ol li { line-height: 1.8; }

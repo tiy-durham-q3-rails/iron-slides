@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title>HTML5</title>
+    <title>gulp.js</title>
     <link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.min.css">
 		<link rel="stylesheet" href="../styles/main.min.css" id="theme">
 
@@ -22,82 +22,98 @@
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
     <link rel="shortcut icon" href="../images/favicon.ico">
-  </head>
 
+  </head>
+  
   <body>
     <div class="reveal">
-    
+  
       <aside class="logo">
         <img src="../images/tiy-logo.png" width="150">
       </aside>
     
       <div class="slides">
-        
-        <section data-background="#FD0755" class="title">
-          <h1>HTML5</h1>
+      	<section data-background="#FD0755" class="title">
+          <h1>gulp.js</h1>
         </section>
         
         <section>
-          <h2>What is HTML5?</h2>
+          <h2>Let's start with <a href="http://nodejs.org/">node.js</a></h2>
+          <p class="fragment">
+            Node.js is a software platform for scalable server-side and networking applications. Node.js applications are written in JavaScript, and can be run within the Node.js runtime on Mac OS X, Windows and Linux with no changes
+          </p>
         </section>
         
         <section>
-          <img src="http://i.imgur.com/2FTJy4h.png" width="200">
-          <h3>HTML5 is the latest standard for HTML approved by the w3c.</h3>
+          <h2>What is <a href="https://www.npmjs.org/">npm</a>?</h2>
+          <p class="fragment">Node Package Manager (npm) installs, publishes and manages node programs through command line.</p>
+          <pre class="fragment">
+            <code>
+          npm install name-of-package
+            </code>
+          </pre>
+        </section>
+        
+        <section>
+          <h2>What is <a href="http://gulpjs.com/">gulp.js?</a></h2>
+          <p>A stream builder written in Javascript.</p>
+        </section>
+        
+        <section>
+          <h2>What do you mean by streams?</h2>
+          <p class="fragment">A stream represents an object that can either be the source of data or it can be the target of data.</p>
+        </section>
+        
+        <section data-background="../images/class-six/stream.jpg">
+          <blockquote cite="http://cm.bell-labs.com/who/dmr/mdmpipe.html">
+            <p>"We should have some ways of connecting programs like garden hose--screw in
+  another segment when it becomes necessary to massage data in
+  another way. This is the way of I/O also."</p>
+          </blockquote>
+        </section>
+        
+        <section>
+          <h2>Want to learn more about streams?</h2>
+          <a href="https://github.com/substack/stream-handbook">Check out the streams handbook!</a>
+        </section>
+        
+        <section>
+          <h2>gulp.js VS Grunt.js</h2>
           <ul>
-            <li class="fragment">Replaces both HTML 4, XHTML, and the HTML DOM Level 2.</li>
-            <li class="fragment">Designed to deliver rich media.</li>
-            <li class="fragment">HTML5 is cross platform.</li>
+            <li class="fragment">gulp utilizes nodes built-in streams module to implement task, while Grunt does not.</li>
+            <li class="fragment">Grunt causes you to write more code. (Input + output values need to be defined.)</li>
+            <li class="fragment">gulp.js is newer, but building momentum.</li>
           </ul>
         </section>
         
         <section>
-          <h2><code>&lt;header&gt;</code></h2>
-          <p>Represents a group of introductory or navigational aids.</p>
+          <h2>Let's get gulping!</h2>
+          <ol>
+            <li>Open your Surf + Paddle folder in atom/Sublime.</li>
+            <li>Create two new files: 
+              <ul>
+                <li><code>gulpfile.js</code></li>
+                <li><code>package.json</code></li>
+              </ul>
+            <li>Go to this url to get code: <a href="https://gist.github.com/juliaelman/e752a5d72d73d9991436">click here.</a></li>
+          </ol>
         </section>
         
         <section>
-          <h2><code>&lt;nav&gt;</code></h2>
-          <p>A section of a page that links to other pages or to parts within the page: a section with navigation links.</p>
+          <h2>HOMEWORK</h2>
+          <ul>
+            <li>Continue work on desktop version of Surf + Paddle.</li>
+            <li>Add Bourbon + refactor SCSS with this library of mixins.</li>
+            <li>
+              Add <code>gulpfile.js</code> + <code>package.json</code> to your project to Github.
+            </li>
+            <li>Re-structure your folder structure like-a-so: 
+              <a href="https://gist.github.com/juliaelman/e752a5d72d73d9991436#file-gistfile1-txt">example here.</a>
+            </li>
+          </ul>
         </section>
         
-        <section>
-          <h2><code>&lt;aside&gt;</code></h2>
-          <p>A portion of a page that consists of content that is tangentially related to the content around it.</p>
-        </section>
-        
-        <section>
-          <h2><code>&lt;footer&gt;</code></h2>
-          <p>Represents a footer for its nearest sectioning content or sectioning root element.</p>
-        </section>
-        
-        <section>
-          <h2><code>&lt;article&gt;</code></h2>
-          <p>A self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable.</p>
-        </section>
-        
-        <section>
-          <h2><code>&lt;section&gt;</code></h2>
-          <p>A generic section of a document, i.e., a thematic grouping of content, typically with a heading.</p>
-        </section>
-        
-        <section>
-          <h2><code>&lt;time&gt;</code></h2>
-          <p>A data type denotes time dimensions expressed in seconds or milliseconds.</p>
-        </section>
-        
-        <section>
-          <code>
-              &lt;time datetime="2014-06-04"&gt;Today&lt;/time&gt;
-           </code>
-        </section>
-        
-        <section>
-         <h2>Exercise Time!</h2>
-         <p>Take the following code base and add in each one of the tags we just went over:</p>
-         <a href="https://gist.github.com/juliaelman/2454aae66a6a0daebf8a">Click here to view the Gist file.</a>
-       </section> 
-    </div>
+		  </div>
 
 		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
 		<script src="../bower_components/reveal.js/js/reveal.min.js"></script>

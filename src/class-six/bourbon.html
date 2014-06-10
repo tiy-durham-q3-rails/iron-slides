@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title>Introduction</title>
+    <title>Bourbon</title>
     <link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.min.css">
 		<link rel="stylesheet" href="../styles/main.min.css" id="theme">
 
@@ -24,59 +24,106 @@
     <link rel="shortcut icon" href="../images/favicon.ico">
   </head>
 <body>
-<div class="reveal">
+  <div class="reveal">
   
     <aside class="logo">
       <img src="../images/tiy-logo.png" width="150">
     </aside>
-
   
     <div class="slides">
-      
-      <section data-background="#FD0755" class="title">
-        <img src="../images/tiy-logo-white.png" alt="" style="border: none; box-shadow: none;" width="800">
-        <h2>Front End Engineering Class</h2>
-        <h3>SUMMER 2014</h3>
-      </section>
-      <section>
-        <h1>WELCOME</h1>
-        <ul>
-          <li class="fragment">We are here for you.</li>
-          <li class="fragment">Support each other.</li>
-          <li class="fragment">Every question is important.</li>
-          <li class="fragment">HAVE FUN!</li>
-        </ul>
-      </section>
-      <section>
-        <h2>INTRODUCE YOURSELF</h2>
-        <ul>
-          <li>Who are you?</li>
-          <li>What are your goals for this class?</li>
-          <li>What is your favorite food treat?</li>
-        </ul>
-      </section>
-      
-      <section data-background="../images/class-one/gdirdu-firstclass.jpg">
-        <h1>HELLO</h1>
-        <p>My name is Julia and I'll be your guide on this journey.</p>
+    	<section data-background="#FD0755" class="title">
+        <h1>Bourbon</h1>
       </section>
       
       <section>
-        <h2>CLASS WEBSITE</h2>
-        <p>
-          <a href="http://tiy-durham-june2014-frontend.github.io/class-website/">
-            http://tiy-durham-june2014-frontend.github.io/class-website/
-          </a>
+        <h2>What is <a href="http://bourbon.io/">Bourbon</a>?</h2>
+        <p class="fragment">
+          A simple and lightweight mixin library for Sass.
         </p>
       </section>
       
-      <section data-background="../images/class-one/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg">
-        <blockquote cite="http://en.wikipedia.org/wiki/Jim_Whittaker">
-          <p>"You never conquer a mountain. Mountains can't be conquered; you conquer yourself."</p>
-          <strong>— Jim Whittaker</strong>
-        </blockquote>
-      </section>
+      <section>
+        <pre>
+          <code>
+// Bourbon mixin with Sass
+section {
+  @include linear-gradient(to top, red, orange);
+}
 
+/* Compiled CSS  */
+section {
+  background-color: red;
+  background-image: -webkit-linear-gradient
+                              (bottom, red, orange);
+  background-image: 
+                    linear-gradient(to top, red, orange);
+}
+          </code>
+        </pre>
+      </section>
+      
+      <section>
+        <pre>
+          <code>
+// Bourbon mixin with Sass
+h1 {
+  font-family: $helvetica;
+  font-size: golden-ratio(14px,  1);
+}
+
+
+/* Compiled CSS  */
+h1 {
+  font-family: "Helvetica Neue", 
+                        Helvetica, Arial, sans-serif;
+  font-size: 23px;
+}
+          </code>
+        </pre>
+      </section>
+      
+      <section>
+        <h2>Bourbon VS Compass</h2>
+        <ul>
+          <li class="fragment">Compass requires you to include a <code>config.rb</code> file to configure your Sass input/output.</li>
+          <li class="fragment">Bourbons is simply a set of mixins for us to leverage.</li>
+          <li class="fragment">Compass uses Ruby extensions while Bourbon relies exclusively on Sass.</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2>Installing Bourbon</h2>
+        <ol>
+          <li>Open Terminal.app</li>
+          <li>Type: <code>gem install bourbon</code></li>
+          <li><code>cd</code> into your Surf + Paddle styles directory.</li>
+          <li>Type: <code>bourbon install</code></li>
+        </ol>
+      </section>
+      
+      <section>
+        <h2>Adding Bourbon to your SCSS file</h2>
+        <ol>
+          <li>Open your <code>.scss</code> file.</li>
+          <li>Add <code>@import 'bourbon/bourbon';</code> to the beginning of your file.</li>
+          <li>Enjoy the Bourbon goodness!</li>
+        </ol>
+      </section>
+      
+      <section>
+        <h2>Bourbon documentation</h2>
+        <p>There are lots of tips and tricks to use when using Bourbon. Check out their documentation located here: <a href="http://bourbon.io/docs/">http://bourbon.io/docs/</a></p>
+      </section>
+      
+      <section>
+        <h2>Exercise time!</h2>
+        <p>Let's add some Bourbon mixins to your Sass styles.</p>
+        <ul>
+          <li>Open Surf + Paddle .scss file.</li>
+          <li>Start adding in mixins!</li>
+        </ul>
+      </section>
+      
 		</div>
 
 		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
