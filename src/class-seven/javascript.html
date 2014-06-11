@@ -1,0 +1,469 @@
+<!-- Big thanks to teaching-materials.org for example slides! -->
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Intro to Javascript</title>
+    <link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="../styles/main.min.css" id="theme">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = '../bower_components/reveal.js/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+    <link rel="shortcut icon" href="../images/favicon.ico">
+  </head>
+  <body>
+    <div class="reveal">
+  
+      <aside class="logo">
+        <img src="../images/tiy-logo.png" width="150">
+      </aside>
+    
+      <div class="slides">
+      
+        <section data-background="#FD0755" class="title">
+          <h1>Intro to Javascript</h1>
+        </section>
+        
+        <section>
+          <h2>Open repl.it</h2>
+          <p>Go to <a href="http://repl.it">http://repl.it</a> in Chrome
+          (not Firefox)</p>
+        </section>
+        
+        <section>
+          <h2>What is Javascript?</h2>
+          <p>A client side scripting language that is primarily implemented as part of a web browser in order to provide enhanced user interfaces and dynamic websites.</p>
+        </section>
+        
+        <section>
+          <h2>Brief History</h2>
+          <ul>
+            <li class="fragment"> <b>1995:</b> At Netscape, Brendan Eich created "LiveScript", which gets renamed to "JavaScript".</li>
+            <li class="fragment"><b>1996:</b> Microsoft releases "JScript", a port, for IE3.</li>
+            <li class="fragment"><b>1997:</b> JavaScript was standardized in the "ECMAScript" spec.</li>
+            <li class="fragment"><b>2005:</b> "AJAX" was coined, and the web 2.0 age begins.</li>
+            <li class="fragment"><b>2006:</b> jQuery 1.0 was released.</li>
+            <li class="fragment"><b>2010:</b> Node.JS was released by Joyent.</li>
+            <li class="fragment"><b>2012:</b> ECMAScript Harmony spec nearly finalized.</li>
+          </ul>
+          <aside class="notes"> Made in 10 days. Netscape + Sun marketing move to rename.Google Maps + GMail make it quite popular. http://www.oreillynet.com/pub/a/javascript/2001/04/06/js_history.html We’ll use parts that are solid and have been around for a long time.</aside>
+        </section>
+        
+        <section>
+          <h2>Statements</h2>
+          <p>Each instruction in JS is a "statement", like:</p>
+          <pre>
+            <code>
+      console.log('Hello World!');
+            </code>
+          </pre>
+        </section>
+        
+        <section>
+          <h2>Variables</h2>
+          <p>Variables can used to store values, strings or numbers.</p>
+          <pre>
+            <code>
+            var x;
+            x = 5;
+            console.log(x);
+            </code>
+          </pre>
+          <p>Re-assigning values to an existing variable value.</p>
+          <pre>
+            <code>
+            x = 50;
+            console.log(x);
+            </code>
+          </pre>
+          <aside class="notes">
+            Variables are one of the basic building blocks of Javascript. Just like 'x' in algebra, a variable in programming is a named container for a value that can change. Variables have to be 'declared' once before being used, using the 'var' keyword and the name of the variable. A variable declaration is a simple statement, so it ends with a semi-colon.
+            Assigning an initial value to a variable is called 'initialising'. You can declare and initialise in one go, or seperately.
+            If its not assigned, it's undefined.
+          </aside>
+        </section>
+        
+        <section>
+          <h2>Variables Names</h2>
+          <ul>
+            <li>Begin with letters, $ or _</li>
+            <li>Only contain letters, numbers, $ and _</li>
+            <li>Case sensitive</li>
+            <li>Avoid <a href="https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words">reserved words</a></li>
+            <li>Choose clarity and meaning</li>
+            <li>Prefer camelCase for multipleWords (instead of under_score)</li>
+            <li>Pick a naming convention and stick with it</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>This is ok</h2>
+            <pre>
+var numPeople, $mainHeader, _num, _Num;
+            </pre>
+          <h2>This is not ok</h2>
+            <pre>
+      var 2coolForSchool, soHappy!
+            </pre>
+        </section>
+        
+        <section>
+          <h2>Data Types</h2>
+          <p>Variables can store different "types" of data.</p>
+          <ul>
+            <li>Numbers</li>
+            <li>Strings</li>
+            <li>Booleans</li>
+            <li>Undefined</li>
+            <li>Null</li>
+          </ul>
+          <aside class="notes">
+            Variables can be populated with any one of the 'data types' available in Javascript. These are the simple ones we'll be working with today...
+            There are also data types that cater for situations where there is no value undefined and null.
+            Loose typing- you don't tell JS what type of data type it is, it guesses. You can use typeof to see what it thinks.
+          </aside>
+        </section>
+        
+        <section>
+          <h2>Numbers</h2>
+          <p>A number can be a whole or floating point value.</p>
+          <pre>
+            <code>
+            var year = 2014;
+            var pi = 3.14;
+            </code>
+          </pre>
+        </section>
+        
+        <section>
+          <h2>Strings</h2>
+          <p>An immutable string of characters.</p>
+          <pre>
+            <code>
+      var message = 'I am developer!';
+      var book = "Dragon's Lair";
+            </code>
+          </pre>
+        </section>
+        
+        <section>
+          <h2>Booleans</h2>
+          <p>Represents logical values which result in true or false.</p>
+          <pre>
+            <code>
+          var chocolate = true;
+          var kale = false;
+            </code>
+          </pre>
+        </section>
+        
+        <section>
+          <h2>Undefined</h2>
+          <p>Represents a value that hasn't been defined.</p>
+          <pre>
+            <code>
+          var notDefinedYet;
+            </code>
+          </pre>
+        </section>
+        
+        <section>
+          <h2>Null</h2>
+          <p>Represents an explicitly empty value.</p>
+          <pre>
+            <code>
+          var latte = null;
+            </code>
+          </pre>
+        </section>
+        
+        <section>
+        <h2>Javascript Commenting</h2>
+            <pre>
+// You can write single-line comments
+var peanutButter = "Crunchy or creamy"; // Or you can comment after a statement
+
+/* 
+Or you can write multi-line comments, if you have something very long
+to say like this gratuitously long description.
+*/
+            </pre>
+        </section>
+        <section>
+          <h2>Functions</h2>
+          <p>Functions are re-usable collections of statements.</p>
+          <pre>
+            <code class="fragment">
+    function functionName(parameters) {
+      Statements
+    }
+            </code>
+            <code class="fragment">
+    function todayDate() {
+      console.log('June 11th');
+    }
+            </code>
+            <code class="fragment">
+    todayDate();
+            </code>
+          </pre>
+        </section>
+        
+        <section>
+          <h2>Alternate Function Declaration Syntax</h2>
+          <p>Functions are really just variables that have code inside, rather than strings or numbers.</p>
+            <pre>
+var sum = function(a, b) {
+    return a + b;
+};
+            </pre>
+            <p>But really, functions are Objects, like most everything in JavaScript.</p>
+            <pre>
+var sum = new Function('a', 'b', 'return a + b');
+            </pre>
+        </section>
+        
+        <section> 
+          <h2>Arguments</h2>
+          <p>In JavaScript, we have named arguments, but we can't refer to them by name during the function call.</p>
+
+          <pre>
+            <code>
+      function sum(arg1, arg2) {
+          return arg1 + arg2;
+      }
+
+      sum(88, 44);
+            </code>
+          </pre>
+        </section>
+        
+        <section>
+          <h2>Return Values</h2>
+          <p>The return keyword returns a value to whoever calls the function (and exits the function).</p>
+          <pre>
+            <code>
+function sum(num1, num2) {
+  var result = num1 + num2;
+  return result; // After won't be executed
+}
+
+var addNumbers = sum(5, 2);
+            </code>
+          </pre>
+        </section>
+        
+        <section>
+          <h2>
+            <a href="http://www.teaching-materials.org/javascript/exercises/functions.html">EXERCISE TIME!</a>
+          </h2>
+        </section>
+        
+        <section>
+          <h2>Objects</h2>
+          <p>A data type that let us store a collection of properties and methods</p>
+          <pre>
+            <code>
+    var objectName = { 
+      propertyName: propertyValue,
+      propertyName: propertyValue,
+    };
+            </code>
+          </pre>
+        </section>
+        
+        <section>
+          <h2>Operators</h2>
+          <ul>
+            <li class="fragment">Assignment: assigns value on left based on right value.</li>
+            <li class="fragment">Comparison: Compares each value with a boolean result.</li>
+            <li class="fragment">Arithmetic: takes numerical values and returns a single numerical value.</li>
+            <li class="fragment">Logical: typically are boolean values using and, or, not.</li>
+            <li class="fragment">String: concatenation of string values.</li>
+            <li class="fragment">Bitwise: takes values as a set of 32 bits, rather than as decimal, hexadecimal, or octal numbers</li>
+            <li class="fragment">Special: unique to Javascript operators (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Special_operators">Listed here.</a>) </li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>Control flow</h2>
+          <p>Conditionals that control the flow of the code.</p>
+        </section>
+        
+        <section>
+          <h2>if statements</h2>
+          <p></p>
+          <pre >
+if (condition) {
+  // statements to execute
+}
+</pre>
+
+<pre>
+var x = 5;
+
+if (x > 0) {
+  console.log('x is a positive value.');
+}
+</pre>
+        </section>
+        <section>
+          <h2>
+            <a href="http://www.teaching-materials.org/javascript/exercises/ifelse.html">
+              EXERCISE TIME!
+            </a>
+          </h2>
+        </section>
+        <section>
+          <h2>while loop</h2>
+          <p>The while loop tells JS to repeat statements until a condition is true.</p>
+          <pre>
+          while (expression) {
+            // statements to repeat
+          }
+          </pre>
+
+          <pre>
+          var x = 0;
+          while (x < 5) {
+            console.log(x);
+            x = x + 1;
+          }
+          </pre>
+        </section>
+        
+        <section>
+          <h2>for loop</h2>
+          <p>The for loop is another way of repeating statements, more specialized than while.</p>
+          <pre>
+for (initialize; condition; update) {
+  // statements to repeat
+}
+</pre>
+
+<pre>
+for (var i = 0; i < 5; i = i + 1) {
+  console.log(i);
+}
+</pre>
+        </section>
+        <section>
+          <h2>
+            <a href="http://www.teaching-materials.org/javascript/exercises/forloops.html">
+              EXERCISE TIME!
+            </a>
+          </h2>
+        </section>
+        <section>
+          <h2>Arrays</h2>
+          <p>List of objects that we can manipulate with different methods.</p>
+          <pre>
+            <code>
+var names = new Array('Alice','Bob','Jack');
+            </code>
+          </pre>
+        </section>
+        
+        <section>
+          <h2>.split()</h2>
+          <p>
+            A method splits a String object into an array of strings by separating the string into substrings.
+          </p>
+        </section>
+        
+        <section>
+          <h2>.join()</h2>
+          <p>A method joins all elements of an array into a string.</p>
+        </section>
+        
+        <section>
+          <h2>.concat()</h2>
+          <p>A method combines the text of two or more strings and returns a new string.</p>
+        </section>
+        
+        <section>
+          <h2>.length()</h2>
+          <p>A property that represents the length of a string.</p>
+        </section>
+        
+        <section>
+          <h2>
+            <a href="http://www.teaching-materials.org/javascript/exercises/arrays.html">
+              EXERCISE TIME!
+            </a>
+          </h2>
+        </section>
+        
+        <section>
+          <h2>window.alert()</h2>
+          <p>Method displays an alert dialog with the optional specified content and an OK button.</p>
+          <pre>
+            window.alert(message);
+          </pre>
+        </section>
+        
+        <section>
+          <h2>window.prompt()</h2>
+          <p>Displays a dialog with an optional message prompting the user to input some text.</p>
+          <pre>
+            window.prompt(message);
+          </pre>
+        </section>
+        
+        <section>
+          <h2>Open Chrome inspector and go to the Console tab.</h2>
+        </section>
+  
+        <section>
+          <h2>HOMEWORK</h2>
+          <p>Create examples of each type discussed in class and explain via comments what is in the code.</p>
+        </section>
+      </div>
+      
+    </div>
+
+		<script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+		<script src="../bower_components/reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+        fragments: true,
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        backgroundTransition: 'slide', 
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
