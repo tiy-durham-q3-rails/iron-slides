@@ -1,0 +1,464 @@
+<!-- Big thanks to teaching-materials.org for example slides! -->
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Looping through arrays</title>
+    <link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="../styles/main.min.css" id="theme">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '../bower_components/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="../images/favicon.ico">
+  </head>
+  <body>
+    <div class="reveal">
+
+      <aside class="logo">
+        <img src="../images/tiy-logo.png" width="150">
+      </aside>
+
+      <div class="slides">
+
+        <section data-background="#FD0755" class="title">
+          <h1>Looping over arrays in JavaScript</h1>
+        </section>
+
+        <section>
+          <h2>Open repl.it</h2>
+          <p>Go to <a href="http://repl.it">http://repl.it</a> in Chrome
+          (not Firefox)</p>
+        </section>
+
+        <section>
+          <h2>Why looping?</h2>
+          <p>
+            Going through each piece of a set of data and performing some
+            action is one of the most common things you will do when programming.
+          </p>
+        </section>
+
+        <section>
+          <h2>Good ol' <code>while</code></h2>
+          <pre>
+          var x = 0;
+          while (x < 5) {
+            console.log(x);
+            x = x + 1;
+          }
+          </pre>
+        </section>
+
+        <section>
+          <h2>Good ol' <code>for</code></h2>
+          <pre>
+          for (var i = 0; i < 5; i = i + 1) {
+            console.log(i);
+          }
+          </pre>
+        </section>
+
+        <section>
+          <h2>Why not <code>for</code> and <code>while</code>?</h2>
+          <ul>
+            <li>Using arrays with <code>while</code> isn't intuitive</li>
+            <li>Using arrays with <code>for</code> isn't bad, but it's wordy</li>
+            <li>Arrays come with a method, <code>.forEach</code>, which takes a function!</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Functions that take functions that take functions...</h2>
+          <p>
+            In JavaScript, functions are objects, so we can pass them around
+            like any other value. This concept is mind-bending, but
+            <em>fundamental</em> to JavaScript programming.
+          </p>
+        </section>
+
+        <section>
+          <h2>Looping with <code>for</code></h2>
+          <pre>
+            <code>
+var words = ['peanut', 'butter', 'and', 'jelly'];
+
+for (var idx = 0; idx < words.length; idx++) {
+  console.log(words[idx]);
+}
+
+// Output:
+// peanut
+// butter
+// and
+// jelly
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><code>for</code> dissected</h2>
+
+          <pre><code>
+for (var idx = 0; idx < words.length; idx++) {
+  console.log(words[idx]);
+}
+          </code></pre>
+          <ul>
+            <li><code>words</code> is our array</li>
+            <li><code>idx</code> starts at 0 and goes up by one each loop</li>
+            <li>the <code>for</code> loop ends when <code>idx</code> gets to the last index in the array</li>
+            <li>we use <code>idx</code> as the index on the array to get each element</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Looping with <code>.forEach</code></h2>
+          <pre>
+            <code>
+var words = ['peanut', 'butter', 'and', 'jelly'];
+
+words.forEach(function (word) {
+  console.log(word);
+});
+
+// Output:
+// peanut
+// butter
+// and
+// jelly
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><code>.forEach</code> dissected</h2>
+
+          <pre><code>
+words.forEach(function (word) {
+  console.log(word);
+});
+          </code></pre>
+          <ul>
+            <li><code>words</code> is our array</li>
+            <li><code>.forEach</code> is a method on all arrays</li>
+            <li><code>.forEach</code> takes a function as an argument</li>
+            <li>that function is often called a <em>callback</em></li>
+            <li>that function -- which is <em>anonymous</em> -- takes one argument</li>
+            <li>that function will be called over and over for each element of the array</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><code>.forEach</code> with an index</h2>
+
+          <pre><code>
+words.forEach(function (word, idx) {
+  console.log(idx + 1 + ". " + word);
+});
+
+// Output
+// 1. peanut
+// 2. butter
+// 3. and
+// 4. jelly
+          </code></pre>
+          <ul>
+            <li>The second argument to the callback is the index of the element.</li>
+            <li>Why did we add 1 to <code>idx</code> before displaying it?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>
+            <a href="http://www.teaching-materials.org/javascript/exercises/arrays.html">
+              EXERCISE TIME!
+            </a>
+          </h2>
+
+          <p>Try it with <code>for</code> and <code>.forEach</code>!</p>
+        </section>
+
+        <section>
+          <h2>Transforming arrays with <code>.map</code></h2>
+          <p>
+            <code>.map</code> is another method on all arrays. It goes through
+            each element of an array and calls a function on that element. It
+            collects the return values of that function and makes a new array.
+          </p>
+        </section>
+
+        <section>
+          <h2><code>.map</code> in action</h2>
+
+          <pre>
+            <code>
+numbers = [1, 2, 3, 4, 5];
+numbers.map(function (num) {
+  return num * num;
+});
+
+// returns:
+// [ 1, 4, 9, 16, 25 ]
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><code>.map</code> dissected</h2>
+
+          <pre><code>
+numbers.map(function (num) {
+  return num * num;
+});
+          </code></pre>
+          <ul>
+            <li><code>numbers</code> is our array</li>
+            <li><code>.map</code> is a method on all arrays</li>
+            <li><code>.map</code> takes a callback function as an argument</li>
+            <li>the callback takes one argument</li>
+            <li>the callback will be called over and over with each element of the array</li>
+            <li>the return value of the callback will be collected into a new array</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><code>.map</code> with an index</h2>
+
+          <pre>
+            <code>
+numbers = [1, 2, 3, 4, 5];
+numbers.map(function (num, idx) {
+  return num + idx;
+});
+
+// returns:
+// [ 1, 3, 5, 7, 9 ]
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Transforming arrays with <code>.reduce</code></h2>
+          <p>
+            <code>.reduce</code> takes the elements of an array one-by-one
+            and runs some function on them that will reduce them to one value.
+          </p>
+        </section>
+
+        <section>
+          <h2><code>.reduce</code> in action</h2>
+          <pre>
+            <code>
+numbers.reduce(function (total, num) {
+  return total + num;
+});
+
+// returns 15
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><code>.reduce</code> dissected</h2>
+
+          <pre><code>
+numbers.reduce(function (total, num) {
+  return total + num;
+});
+          </code></pre>
+          <ul>
+            <li><code>numbers</code> is our array</li>
+            <li><code>.reduce</code> is a method on all arrays</li>
+            <li><code>.reduce</code> takes a callback function as an argument</li>
+            <li>
+              the callback takes two arguments
+              <ul>
+                <li>the first is the previous return value from the callback
+                    or the first value in the array</li>
+                <li>the second is the current value in the array</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Another use of <code>.reduce</code></h2>
+          <p>What does this do?</p>
+          <pre>
+[7, 2, 14, 9].reduce(function (currentMax, num) {
+  if (currentMax < num) {
+    return num;
+  } else {
+    return currentMax;
+  }
+});
+          </pre>
+        </section>
+
+        <section>
+          <h2><code>.reduce</code> variations</h2>
+          <ul>
+            <li>
+              <code>.reduce</code> can take two arguments: the callback and
+              an initial value to start with.
+            </li>
+            <li>
+              Like <code>.forEach</code> and <code>.map</code>, the callback to
+              <code>.reduce</code> can take a second argument, which will be
+              the index of the current element being evaluated.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Another use of <code>.reduce</code></h2>
+          <p>What does this do?</p>
+          <pre>
+// assume gettysburg has the text of the
+// Gettysburg Address stripped of all
+// punctuation and downcased
+var words = gettysburg.split(" ");
+
+words.reduce(function (wordCounts, word) {
+  if (wordCounts[word] === undefined) {
+    wordCounts[word] = 1;
+  } else {
+    wordCounts[word] += 1;
+  }
+  return wordCounts;
+}, {});
+          </pre>
+        </section>
+
+        <section>
+          <h2>Quick review</h2>
+          <ul>
+            <li><code>.forEach</code> performs some action with each element of an array</li>
+            <li><code>.map</code> transforms one array into another array</li>
+            <li><code>.reduce</code> transforms an array into a single value</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>EXERCISE TIME!</h2>
+          <ol>
+            <li>Make an array of your top five favorite foods (or sports or bands).</li>
+            <li>Use <code>.map</code> to transform that array into one that puts their
+              rank in front of the word, like so: <code>"1. Creamed corn"</code>.</li>
+            <li>Use <code>.reduce</code> to figure out which one of your favorite things
+              has the longest name.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Implementing <code>.map</code></h2>
+          <pre>
+var myMap = function (callback) {
+    var tmp = []
+    this.forEach(function (element, idx) {
+        tmp.push(callback(element, idx));
+    }, this);
+    return tmp;
+}
+
+Array.prototype.myMap = myMap;
+
+numbers.myMap(function (num, idx) {
+  return num * num;
+});
+// returns [1, 4, 9, 16, 25]
+          </pre>
+        </section>
+
+        <section>
+          <h2>Implementing <code>.reduce</code></h2>
+          <pre>
+var myReduce = function (callback, initial) {
+    var previousValue = initial;
+    this.forEach(function (element, idx) {
+        if (idx == 0 &&
+            previousValue === undefined) {
+            previousValue = element;
+        } else {
+            previousValue =
+              callback(previousValue, element);
+        }
+    });
+    return previousValue;
+}
+          </pre>
+        </section>
+
+        <section>
+          <h2>Implementing <code>.reduce</code></h2>
+          <pre>
+Array.prototype.myReduce = myReduce;
+
+numbers.myReduce(function (total, num) {
+    return total + num;
+});
+
+// returns 15
+          </pre>
+        </section>
+
+        <section>
+          <h2>MIND EXPLOSION</h2>
+        </section>
+
+        <section>
+          <h2>HOMEWORK</h2>
+
+          <p>
+            Go to <a href="http://bit.ly/js-loop-exercise">http://bit.ly/js-loop-exercise</a>
+            and follow the instructions there, using the provided data.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+    <script src="../bower_components/reveal.js/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        fragments: true,
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        backgroundTransition: 'slide',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
